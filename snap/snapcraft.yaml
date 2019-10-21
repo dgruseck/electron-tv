@@ -34,15 +34,15 @@ plugs:
 parts:
   electron-tv:
     plugin: nodejs
-    source: ./
+    source: https://github.com/dgruseck/electron-tv.git
     after: [desktop-gtk3, xwayland-kiosk-helper]
     override-build: |
       case $SNAPCRAFT_ARCH_TRIPLET in
-          "i386-linux-gnu") ARCH="ia32";;
-          "x86_64-linux-gnu") ARCH="x64";;
-          "arm-linux-gnueabihf") ARCH="armv7l";;
-          "aarch64-linux-gnu") ARCH="arm64";;
-          *) echo "ERROR: electron does not support the '$SNAPCRAFT_ARCH_TRIPLET' architecture" && exit 1;;
+        "i386-linux-gnu") ARCH="ia32";;
+        "x86_64-linux-gnu") ARCH="x64";;
+        "arm-linux-gnueabihf") ARCH="armv7l";;
+        "aarch64-linux-gnu") ARCH="arm64";;
+        *) echo "ERROR: electron does not support the '$SNAPCRAFT_ARCH_TRIPLET' architecture" && exit 1;;
       esac
       npm install electron-packager &&
       ./node_modules/.bin/electron-packager . --overwrite --platform=linux --arch=$ARCH --output=release-build --prune=true
