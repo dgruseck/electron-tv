@@ -7,6 +7,8 @@
     "start": "electron .",
     "dist": "electron-builder --linux snap"
   },
+  "description": "N/A",
+  "repository": "https://github.com/dgruseck/electron-tv.git",
   "devDependencies": {
     "electron": "6.0.12",
     "electron-builder": "21.2.0"
