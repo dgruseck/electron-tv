@@ -1,0 +1,14 @@
+{
+  "name": "electron-tv",
+  "version": "1.0.0",
+  "main": "main.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --linux snap"
+  },
+  "devDependencies": {
+    "electron": "6.0.12",
+    "electron-builder": "21.2.0"
+  }
+}
