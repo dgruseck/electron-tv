@@ -36,6 +36,7 @@ parts:
     plugin: nodejs
     source: https://github.com/electron/electron-quick-start.git
     after: [desktop-gtk3, xwayland-kiosk-helper]
+    build: echo "I'm running on SNAPCRAFT_ARCH_TRIPLET $SNAPCRAFT_ARCH_TRIPLET"
     override-build: |
       case $SNAPCRAFT_ARCH_TRIPLET in
         "i386-linux-gnu") ARCH="ia32";;
