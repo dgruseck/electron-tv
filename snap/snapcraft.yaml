@@ -11,7 +11,7 @@ apps:
   electron-tv:
     daemon: simple
     restart-condition: always
-    command: desktop-launch xwayland-kiosk-launch "$SNAP/electron-tv" "--no-sandbox"
+    command: desktop-launch xwayland-kiosk-launch "$SNAP/electron-tv/electron-tv" "--no-sandbox"
     environment:
       XWAYLAND_FULLSCREEN_WINDOW_HINT: window_role="browser-window"
     slots: [x11]
