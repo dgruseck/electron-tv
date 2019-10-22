@@ -8,7 +8,7 @@ function createWindow() {
   // Create the browser window.
   app.commandLine.appendSwitch("disable-web-security");
   win = new BrowserWindow({
-    kiosk: false,
+    kiosk: true,
     webSecurity: false,
     webPreferences: {
       nodeIntegration: true
@@ -19,7 +19,7 @@ function createWindow() {
   win.loadFile("src/index.html");
 
   // Open the DevTools.
-  win.webContents.openDevTools();
+  //   win.webContents.openDevTools();
 
   // Emitted when the window is closed.
   win.on("closed", () => {
