@@ -6,10 +6,10 @@ let win;
 
 function createWindow() {
   // Create the browser window.
+  app.commandLine.appendSwitch("disable-web-security");
   win = new BrowserWindow({
-    // kiosk: true,
-    width: 800,
-    height: 600,
+    kiosk: false,
+    webSecurity: false,
     webPreferences: {
       nodeIntegration: true
     }
