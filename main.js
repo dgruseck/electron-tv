@@ -1,4 +1,25 @@
 const { app, BrowserWindow, Menu } = require("electron");
+const { getPluginEntry } = require("mpv.js");
+const path = require("path");
+
+const pluginDir = path.join(
+  path.dirname(require.resolve("mpv.js")),
+  "build",
+  "Release"
+);
+if (process.platform !== "linux") {
+  process.chdir(pluginDir);
+}
+
+app.commandLine.appendSwitch("disable-web-security");
+app.commandLine.appendSwitch("ignore-gpu-blacklist");
+app.commandLine.appendSwitch("enable-gpu-compositing");
+app.commandLine.appendSwitch("disable-quic");
+app.commandLine.appendSwitch("enable-fast-unload");
+app.commandLine.appendSwitch("enable-tcp-fast-open");
+app.commandLine.appendSwitch("enable-checker-imaging");
+app.commandLine.appendSwitch("enable-native-gpu-memory-buffers");
+app.commandLine.appendSwitch("enable-gpu-rasterization");
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -6,20 +27,13 @@ let win;
 
 function createWindow() {
   // Create the browser window.
-  app.commandLine.appendSwitch("disable-web-security");
-  app.commandLine.appendSwitch("ignore-gpu-blacklist");
-  app.commandLine.appendSwitch("enable-gpu-compositing");
-  app.commandLine.appendSwitch("disable-quic");
-  app.commandLine.appendSwitch("enable-fast-unload");
-  app.commandLine.appendSwitch("enable-tcp-fast-open");
-  app.commandLine.appendSwitch("enable-checker-imaging");
-  app.commandLine.appendSwitch("enable-native-gpu-memory-buffers");
-  app.commandLine.appendSwitch("enable-gpu-rasterization");
+
   win = new BrowserWindow({
     kiosk: true,
     webSecurity: false,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      plugins: true
     }
   });
 

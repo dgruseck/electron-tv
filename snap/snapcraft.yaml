@@ -61,6 +61,8 @@ parts:
       - libva-x11-2
       - chromium-codecs-ffmpeg-extra
       - libgl1-mesa-glx
+      - libmpv1
+      - libavformat-dev
     build-packages:
       - nodejs
       - npm
