@@ -63,12 +63,13 @@ parts:
       - libgl1-mesa-glx
       - libmpv1
       - libavformat-dev
-      - opengl
+      - libglu1-mesa
     build-packages:
       - nodejs
       - npm
       - unzip
-      - opengl
+      - libgles2-mesa-dev
+      - libgl1-mesa-dev
 
   # Adapted from snapcraft-desktop-helpers https://github.com/ubuntu/snapcraft-desktop-helpers/blob/master/snapcraft.yaml#L183
   desktop-gtk3:
