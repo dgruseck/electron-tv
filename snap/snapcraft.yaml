@@ -63,6 +63,7 @@ parts:
       - libgl1-mesa-glx
       - libmpv1
       - libavformat-dev
+      - opengl
     build-packages:
       - nodejs
       - npm
