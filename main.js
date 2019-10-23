@@ -14,6 +14,7 @@ function createWindow() {
   app.commandLine.appendSwitch("enable-tcp-fast-open");
   app.commandLine.appendSwitch("enable-checker-imaging");
   app.commandLine.appendSwitch("enable-native-gpu-memory-buffers");
+  app.commandLine.appendSwitch("enable-gpu-rasterization");
   win = new BrowserWindow({
     kiosk: true,
     webSecurity: false,
