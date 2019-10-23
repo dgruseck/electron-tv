@@ -70,7 +70,7 @@ parts:
       - unzip
       - libgles2-mesa-dev
       - libgl1-mesa-dev
-      - ppapi_gles2
+      - ppapi_cpp
 
   # Adapted from snapcraft-desktop-helpers https://github.com/ubuntu/snapcraft-desktop-helpers/blob/master/snapcraft.yaml#L183
   desktop-gtk3:
