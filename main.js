@@ -1,15 +1,4 @@
 const { app, BrowserWindow, Menu } = require("electron");
-const { getPluginEntry } = require("mpv.js");
-const path = require("path");
-
-const pluginDir = path.join(
-  path.dirname(require.resolve("mpv.js")),
-  "build",
-  "Release"
-);
-if (process.platform !== "linux") {
-  process.chdir(pluginDir);
-}
 
 app.commandLine.appendSwitch("disable-web-security");
 app.commandLine.appendSwitch("ignore-gpu-blacklist");
