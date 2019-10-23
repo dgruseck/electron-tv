@@ -59,7 +59,6 @@ parts:
       - libxtst6
       - libva-glx2
       - libva-x11-2
-      - i965-va-driver
       - chromium-codecs-ffmpeg-extra
       - libgl1-mesa-glx
     build-packages:
