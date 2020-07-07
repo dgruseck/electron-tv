@@ -10,7 +10,7 @@
   "description": "N/A",
   "repository": "https://github.com/dgruseck/electron-tv.git",
   "devDependencies": {
-    "electron": "6.0.12",
+    "electron": "7.2.4",
     "electron-builder": "21.2.0"
   },
   "dependencies": {
